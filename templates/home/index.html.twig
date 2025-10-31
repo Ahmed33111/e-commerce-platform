@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil - Environnement{% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-12 text-center mb-4">
+        <h1>Bienvenue sur la plateforme Environnement</h1>
+        <p>Participez à la protection de notre planète !</p>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Événements</h5>
+                <p>Rejoignez des actions locales pour l'environnement.</p>
+                <a href="{{ path('evenement_index') }}" class="btn btn-primary">Voir les événements</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Dépôts de déchets</h5>
+                <p>Signalez ou consultez les dépôts sauvages.</p>
+                <a href="{{ path('depot_index') }}" class="btn btn-success">Voir les dépôts</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Points de collecte</h5>
+                <p>Trouvez les points de tri près de chez vous.</p>
+                <a href="{{ path('point_collecte_index') }}" class="btn btn-info">Localiser</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

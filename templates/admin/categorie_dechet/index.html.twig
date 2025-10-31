@@ -1,0 +1,32 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Gestion des Catégories{% endblock %}
+{% block page_title %}Catégories de Déchets{% endblock %}
+
+{% block body %}
+<a href="{{ path('admin_categorie_new') }}" class="btn btn-success mb-3">Ajouter une catégorie</a>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Couleur</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Plastique</td>
+                <td>Bouteilles, emballages...</td>
+                <td><span style="background:#FF5733; color:white; padding:2px 8px;">Badge</span></td>
+                <td>
+                    <a href="#" class="btn btn-sm btn-warning">Modifier</a>
+                    <a href="#" class="btn btn-sm btn-danger">Supprimer</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

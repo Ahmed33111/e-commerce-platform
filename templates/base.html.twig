@@ -1,0 +1,54 @@
+{# templates/base.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Environnement{% endblock %}</title>
+    {% block css %}
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+        <!-- Ajoute ici d'autres CSS si nécessaire -->
+    {% endblock %}
+</head>
+<body>
+    <!-- Barre de navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="{{ path('home') }}">Environnement</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{{ path('evenement_index') }}">Événements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ path('depot_index') }}">Dépôts</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ path('signalement_index') }}">Signalements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ path('point_collecte_index') }}">Points de Collecte</a></li>
+                    {% if app.user %}
+                        <li class="nav-item"><a class="nav-link" href="{{ path('user_profile') }}">Mon Profil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a></li>
+                    {% else %}
+                        <li class="nav-item"><a class="nav-link" href="{{ path('app_login') }}">Connexion</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ path('app_register') }}">Inscription</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <main class="container mt-4">
+        {% block body %}{% endblock %}
+    </main>
+
+    <!-- Pied de page -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p class="mb-0">&copy; 2025 Projet Environnement</p>
+    </footer>
+
+    {% block js %}
+        <script src="{{ asset('assets/js/main.js') }}"></script>
+        <!-- Ajoute ici d'autres JS si nécessaire -->
+    {% endblock %}
+</body>
+</html>

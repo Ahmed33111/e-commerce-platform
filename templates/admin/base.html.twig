@@ -1,0 +1,37 @@
+{# templates/admin/base.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Admin - Environnement{% endblock %}</title>
+    <link href="{{ asset('assets/libraries/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/admin.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                <div class="position-sticky pt-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a class="nav-link" href="{{ path('admin_evenement_index') }}">Événements</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ path('admin_categorie_index') }}">Catégories Déchets</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ path('admin_point_collecte_index') }}">Points de Collecte</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ path('admin_signalement_index') }}">Signalements</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Contenu principal -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">{% block page_title %}{% endblock %}</h1>
+                </div>
+                {% block body %}{% endblock %}
+            </main>
+        </div>
+    </div>
+
+    <script src="{{ asset('assets/libraries/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>

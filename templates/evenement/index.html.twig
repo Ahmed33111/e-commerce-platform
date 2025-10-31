@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Événements{% endblock %}
+
+{% block body %}
+<h2>Événements à venir</h2>
+<a href="{{ path('evenement_new') }}" class="btn btn-primary mb-3">Créer un événement</a>
+
+<div class="row">
+    <div class="col-md-6 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Nettoyage plage Sidi Bou Saïd</h5>
+                <p class="text-muted">15 Juin 2025</p>
+                <p>Rassemblez-vous pour nettoyer la plage !</p>
+                <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+            </div>
+        </div>
+    </div>
+    <!-- Ajoutez plus d'événements ici dynamiquement plus tard -->
+</div>
+{% endblock %}
