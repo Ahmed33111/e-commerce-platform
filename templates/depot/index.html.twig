@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dépôts Sauvages{% endblock %}
+
+{% block body %}
+<h2>Signalements de dépôts sauvages</h2>
+<a href="{{ path('depot_new') }}" class="btn btn-success mb-3">Signaler un dépôt</a>
+
+<div class="alert alert-info">
+    Aucun dépôt signalé pour le moment. Soyez le premier à agir !
+</div>
+{% endblock %}

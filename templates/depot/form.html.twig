@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+<h2>{{ title }}</h2>
+
+<form method="post">
+    <div class="mb-3">
+        <label for="localisation" class="form-label">Localisation</label>
+        <input type="text" class="form-control" id="localisation" name="localisation" required>
+    </div>
+    <div class="mb-3">
+        <label for="type_dechet" class="form-label">Type de déchet</label>
+        <select class="form-control" id="type_dechet" name="type_dechet" required>
+            <option value="">Sélectionner...</option>
+            <option value="plastique">Plastique</option>
+            <option value="verre">Verre</option>
+            <option value="metal">Métal</option>
+            <option value="organique">Organique</option>
+            <option value="autre">Autre</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea class="form-control" id="description" name="description" rows="4"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="photo" class="form-label">Photo (optionnel)</label>
+        <input type="file" class="form-control" id="photo" name="photo">
+    </div>
+    <button type="submit" class="btn btn-success">Signaler</button>
+    <a href="{{ path('depot_index') }}" class="btn btn-secondary">Annuler</a>
+</form>
+{% endblock %}

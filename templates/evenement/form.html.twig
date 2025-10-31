@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+<h2>{{ title }}</h2>
+
+<form method="post">
+    <div class="mb-3">
+        <label for="nom" class="form-label">Nom de l'événement</label>
+        <input type="text" class="form-control" id="nom" name="nom" required>
+    </div>
+    <div class="mb-3">
+        <label for="date" class="form-label">Date</label>
+        <input type="date" class="form-control" id="date" name="date" required>
+    </div>
+    <div class="mb-3">
+        <label for="lieu" class="form-label">Lieu</label>
+        <input type="text" class="form-control" id="lieu" name="lieu" required>
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea class="form-control" id="description" name="description" rows="4"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Enregistrer</button>
+    <a href="{{ path('evenement_index') }}" class="btn btn-secondary">Annuler</a>
+</form>
+{% endblock %}
